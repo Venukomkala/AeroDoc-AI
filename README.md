@@ -1,6 +1,11 @@
 #  AeroDoc-AI: Aerospace Technical Document Intelligence
 
-A high-performance, grounded Retrieval-Augmented Generation (RAG) assistant designed for aerospace engineering documentation, turbopump systems, and turbine engine manuals. Built with a sleek WhatsApp-inspired interface, vector search via FAISS, and inference powered by Groq's fast Llama 3 models.
+This project is a specialized **Retrieval-Augmented Generation (RAG) assistant** designed for aerospace engineering documentation, turbopump systems, and turbine engine manuals.
+
+The idea behind this was simple — instead of manually digging through dense technical manuals, I wanted to build an **intelligent, grounded assistant that instantly pulls exact technical answers with precise page-level citations**.
+
+So I built this application that processes technical PDFs, vectorizes their content, and walks through the entire RAG pipeline:
+from raw documents → vector retrieval → Groq Llama 3 inference → real-time evaluation metrics.
 
 ---
 
@@ -15,34 +20,32 @@ A high-performance, grounded Retrieval-Augmented Generation (RAG) assistant desi
 
 ---
 
-1. Clone the Repository
+##  Tech Stack
 
+* Python
+* Streamlit
+* FAISS-CPU
+* Sentence-Transformers
+* Groq API (Llama 3 Models)
+* PyPDF2 / LangChain Text Splitters
+
+---
+
+##  How to run this locally
+
+### 1. Clone the Repository
+```bash
 git clone [https://github.com/Venukomkala/AeroDoc-AI.git](https://github.com/Venukomkala/AeroDoc-AI.git)
 cd AeroDoc-AI
 
-
-2. Create and Activate Virtual Environment
-
-# Windows
 python -m venv venv
 venv\Scripts\activate
 
-# macOS / Linux
 python3 -m venv venv
 source venv/bin/activate
 
-3. Install Requirements
-
 pip install -r requirements.txt
-
-Running the Application
 
 python tests/test_vector_store.py
 
-Launch the Streamlit Web App
-
 streamlit run app/streamlit_app.py
-
-
-Step 3: Configure Your API Key
-Get a free Groq API key from console.groq.com/keys.
